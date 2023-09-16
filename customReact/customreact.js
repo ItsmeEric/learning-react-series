@@ -1,10 +1,20 @@
 // Takes the reactElement and whatever container you want inject
 function mainContainer(reactElement, container) {
+  /*
   const domNewElement = document.createElement(reactElement.type);
   domNewElement.innerHTML = reactElement.children;
   domNewElement.setAttribute("href", reactElement.props.href);
   domNewElement.setAttribute("target", reactElement.props.target);
 
+  container.appendChild(domNewElement);
+    */
+
+  const domNewElement = document.createElement(reactElement.type);
+  domNewElement.innerHTML = reactElement.children;
+  for (const prop in reactElement.props) {
+    if (prop === "children") continue;
+    domNewElement.setAttribute(prop, reactElement.props[prop]);
+  }
   container.appendChild(domNewElement);
 }
 
