@@ -1,5 +1,5 @@
 // Takes the reactElement and whatever container you want inject
-function mainContainer(reactElement, container) {
+function customRender(reactElement, container) {
   /*
   const domNewElement = document.createElement(reactElement.type);
   domNewElement.innerHTML = reactElement.children;
