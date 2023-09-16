@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from "./App.jsx";
+import App from "./App.jsx";
 
 const reactElement = {
   type: "a",
@@ -31,4 +31,4 @@ const aReactElement = React.createElement(
   "Click here to access Google"
 );
 
-ReactDOM.createRoot(document.getElementById("root")).render(aReactElement);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
