@@ -3,9 +3,13 @@ import "./App.css";
 
 function App() {
   return (
-    <>
-      <h1 className="bg-green-500 text-3xl">A background-changer App</h1>
-    </>
+    <div className="w-full h-screen duration-200">
+      <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
+        <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">
+          <button>Test</button>
+        </div>
+      </div>
+    </div>
   );
 }
 
