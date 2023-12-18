@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 function App() {
   const [length, setLength] = useState(8);
@@ -20,6 +20,14 @@ function App() {
     setPassword(pass);
   }, [length, numberAllowed, charAllowed]);
 
+  const copyPasswordToClipboard = () => {
+    window.navigator.clipboard.writeText(password);
+  };
+
+  useEffect(() => {
+    generatePassword();
+  }, [length, numberAllowed, charAllowed]);
+
   return (
     <div
       className="w-full max-w-md mx-auto shadow-md
@@ -32,11 +40,14 @@ function App() {
         <input
           type="text"
           value={password}
-          className="outline-none w-full py-1 px-3"
+          className="outline-none w-full py-1 px-3 text-black"
           placeholder="Password"
           readOnly
         />
-        <button className="outline-none bg-cyan-600 text-white py-0.5 px-3 shrink-0">
+        <button
+          onClick={copyPasswordToClipboard}
+          className="outline-none bg-cyan-600 text-white py-0.5 px-3 shrink-0"
+        >
           copy
         </button>
       </div>
