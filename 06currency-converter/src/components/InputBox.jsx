@@ -26,6 +26,9 @@ export default function InputBox(
           }
         />
       </div>
+      <div className="w-1/2 flex flex-wrap justify-end text-right">
+        <select className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"></select>
+      </div>
     </div>
   );
 }
