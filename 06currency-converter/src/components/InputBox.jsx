@@ -1,16 +1,16 @@
 import React, { useId } from "react";
 
-export default function InputBox(
+function InputBox({
   label,
   amount,
   onAmountChange,
-  OnCurrencyChange,
+  onCurrencyChange,
   currencyOptions = [],
   selectedCurrency = "usd",
   amountDisabled = false,
   currencyDisabled = false,
-  className = ""
-) {
+  className = "",
+}) {
   const id = useId();
   return (
     <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
@@ -35,7 +35,7 @@ export default function InputBox(
           className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"
           value={selectedCurrency}
           onChange={(e) => {
-            OnCurrencyChange && OnCurrencyChange(e.target.value);
+            onCurrencyChange && onCurrencyChange(e.target.value);
           }}
           disabled={currencyDisabled}
         >
@@ -49,3 +49,5 @@ export default function InputBox(
     </div>
   );
 }
+
+export default InputBox;
