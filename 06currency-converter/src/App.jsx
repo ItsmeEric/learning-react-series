@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
+import { InputBox } from "./components/index.js";
 
 function App() {
   const [amount, setAmount] = useState(0);
@@ -31,7 +32,33 @@ function App() {
       style={{
         backgroundImage: `url(https://images.pexels.com/photos/259251/pexels-photo-259251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)`,
       }}
-    ></div>
+    >
+      <div className="w-full">
+        <div
+          className="w-full max-w-md mx-auto border
+        border-gray-60 rounded-lg p-5 backdrop-blur-sm
+        bg-white/30"
+        >
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              convert();
+            }}
+          >
+            <div className="w-full mb-1">
+              <InputBox
+                label="from"
+                amount={amount}
+                currencyOptions={options}
+                onCurrencyChange={(currency) => setFrom(currency)}
+                onAmountChange={(amount) => setAmount(amount)}
+                selectedCurrency={from}
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
 
