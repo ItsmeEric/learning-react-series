@@ -63,6 +63,22 @@ function App() {
                 Swap
               </button>
             </div>
+            <div className="w-full mb-1">
+              <InputBox
+                label="to"
+                currencyOptions={options}
+                amount={convertedAmount}
+                onCurrencyChange={(currency) => setTo(currency)}
+                selectedCurrency={to}
+                amountDisabled
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg"
+            >
+              Convert
+            </button>
           </form>
         </div>
       </div>
