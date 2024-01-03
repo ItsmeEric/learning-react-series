@@ -26,7 +26,6 @@ function App() {
     window.navigator.clipboard.writeText(password);
     passwordRef.current?.select();
   };
-
   useEffect(() => {
     generatePassword();
   }, [length, numberAllowed, charAllowed]);
