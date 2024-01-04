@@ -8,8 +8,7 @@ function Profile() {
 
   return (
     <div>
-      Profile: {user}
-      <h1>More components</h1>
+      <h1>Profile: {user.username}</h1>
     </div>
   );
 }
