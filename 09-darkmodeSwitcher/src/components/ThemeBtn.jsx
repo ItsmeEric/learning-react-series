@@ -4,7 +4,21 @@ import useTheme from "../contexts/theme";
 function ThemeBtn() {
   const { themeMode, lightTheme, darkTheme } = useTheme();
 
-  const onChangeBtn = () => {};
+  const onChangeBtn = (e) => {
+    // if (themeMode === "light") {
+    //   darkTheme();
+    // } else {
+    //   lightTheme();
+    // }
+
+    // More clean code
+    const darkModeStatus = e.currentTarget.checked;
+    if (darkModeStatus) {
+      darkTheme();
+    } else {
+      lightTheme();
+    }
+  };
 
   return (
     <label className="relative inline-flex items-center cursor-pointer">
