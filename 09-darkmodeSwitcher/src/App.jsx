@@ -1,6 +1,6 @@
 import Card from "./components/Card";
 import ThemeBtn from "./components/ThemeBtn";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "./contexts/theme";
 import { useState } from "react";
 
 function App() {
