@@ -1,8 +1,19 @@
 import Card from "./components/Card";
 import ThemeBtn from "./components/ThemeBtn";
 import { ThemeProvider } from "styled-components";
+import { useState } from "react";
 
 function App() {
+  const [themeMode, setThemeMode] = useState("light");
+
+  const darkTheme = () => {
+    setThemeMode("dark");
+  };
+
+  const lightTheme = () => {
+    setThemeMode("light");
+  };
+
   return (
     <ThemeProvider value={{ themeMode, darkTheme, lightTheme }}>
       <div className="flex flex-wrap min-h-screen items-center">
