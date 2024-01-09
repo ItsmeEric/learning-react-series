@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { TodoProvider } from "./contexts";
-import { TodoForm } from "./components";
+import { TodoForm, TodoItem } from "./components";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -47,6 +47,11 @@ function App() {
       value={{ todos, addTodo, updateTodo, deleteTodo, toggleTodo }}
     >
       <TodoForm />
+      {todos.map((todo) => {
+        <div key={todo.id}>
+          <TodoItem todo={todo} />
+        </div>;
+      })}
     </TodoProvider>
   );
 }
