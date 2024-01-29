@@ -43,7 +43,23 @@ export default function PostForm({ post }) {
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
       <div className="w-2/3 px-2">
-        <Input label="Title" placeholder="Title" className="mb-4" />
+        <Input
+          label="Title"
+          placeholder="Title"
+          className="mb-4"
+          {...register("title", { required: true })}
+        />
+        <Input
+          label="Slug :"
+          placeholder="Slug"
+          className="mb-4"
+          {...register("slug", { required: true })}
+          onInput={(e) => {
+            setValue("slug", slugTransform(e.currentTarget.value), {
+              shouldValidate: true,
+            });
+          }}
+        />
       </div>
     </form>
   );
